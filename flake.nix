@@ -1,7 +1,7 @@
 {
   description = "another test without a dash";
   inputs = {
-    nixpkgs.url = "nixpkgs/22.11";
+    nixpkgs.url = "nixpkgs/23.05";
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";

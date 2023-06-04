@@ -2,20 +2,25 @@
 let
   nixosModule = { config, lib, pkgs, ... }: {
     config = {
-      system.stateVersion = "22.11";
+      system.stateVersion = config.system.nixos.release;
       environment = {
         systemPackages = [
           pkgs.nyancat
         ];
       };
       users = {
-        users = {
-          nixos = {
-            isNormalUser = true;
-            password = "password";
-          };
+        allowNoPasswordLogin = true;
+        mutableUsers = false;
+        groups.nyancat = {};
+        users.nyancat = {
+          group = "nyancat";
+          isNormalUser = true;
+          shell = "/run/current-system/sw/bin/nyancat";
         };
       };
+      services.getty.autologinUser = lib.mkForce "nyancat";
+      isoImage.makeUsbBootable = true;
+      boot.loader.timeout = lib.mkForce null;
     };
   };
 in

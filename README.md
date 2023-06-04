@@ -1,8 +1,14 @@
-# nixos-generators test
+# Boot2nyan
 
-This is me learning how to `nixos-generators` to create live ISO images.
+A NixOS spin that boots to [nyancat](https://github.com/klange/nyancat).
 
 ## Build
+
+Enable flakes. For example, in your `~/.config/nix/nix.conf`:
+
+```ini
+experimental-features = nix-command flakes
+``` 
 
 ```sh
 nix build
@@ -10,7 +16,11 @@ nix build
 
 ## Run
 
+You can boot the image in qemu:
+
 ```sh
 qemu-system-x86_64 -m 1024 -cdrom result/iso/nixos.iso
 ```
+
+You can `dd` it to a USB stick and boot on metal.
 
