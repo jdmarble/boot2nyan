@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs: 
+  outputs = inputs:
   let
     flakeContext = {
       inherit inputs;
