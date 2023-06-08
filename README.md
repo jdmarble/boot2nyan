@@ -1,6 +1,6 @@
 # Boot2nyan
 
-A NixOS spin that boots to [nyancat](https://github.com/klange/nyancat).
+A NixOS spin that boots to [`nyancat`](https://github.com/klange/nyancat).
 
 ## Build
 
