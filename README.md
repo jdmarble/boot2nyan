@@ -27,3 +27,8 @@ You can `dd` it to a USB stick and boot on metal.
 ## Pre-commit checks
 
 This repository is configured with [pre-commit](https://pre-commit.com/) checks to enforce consistent style and other things.
+Make sure to install the hooks before committing.
+
+```sh
+pre-commit install --install-hooks
+```

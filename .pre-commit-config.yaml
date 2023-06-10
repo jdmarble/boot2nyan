@@ -22,3 +22,7 @@ repos:
     hooks:
       - id: cspell
         files: "\\.md$"
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint
